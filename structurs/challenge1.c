@@ -1,22 +1,26 @@
 #include<stdio.h>
-#include<string.h>
 
-struct mydetails
+struct rectangle
 {
-    char    lastname[50];
-    char    surname[50];
-    int     age;
+    float length;
+    float width;
 };
 
-int main()
+float aire(struct rectangle rect)
 {
-    struct mydetails youness;
-    strcpy(youness.lastname, "ouahmane");
-    strcpy(youness.surname, "youness");
-    youness.age = 24;
-    
+    return (rect.length * rect.width);
+}
+int main()
+{   
+    struct rectangle rect;
+    float result;   
 
-    printf("my last name: %s\n", youness.lastname);
-    printf("my surnamename: %s\n", youness.surname);
-    printf("my age is: %d\n", youness.age);
+
+    printf("enter the length of the rectangle: \n");
+    scanf("%f", &rect.length);
+     printf("enter the widtu of the rectangle: \n");
+    scanf("%f", &rect.width);
+
+    result = aire(rect);
+    printf("the area of the rectangle is: %.2f", result);
 }
